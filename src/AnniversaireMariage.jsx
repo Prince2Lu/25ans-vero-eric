@@ -1,4 +1,5 @@
 import React from "react";
+import couplePhoto from "./assets/nous.png";
 
 /**
  * 25 ANS DE MARIAGE — Véronique & Eric
@@ -24,6 +25,29 @@ const tokens = {
   wine: "#6E2A38",
   gold: "#B9AE8F",
 };
+
+const ACCESS_STEPS = [
+  {
+    label: "Depuis Metz",
+    text: "Prenez l'A4 en direction de Forbach / Sarrebruck. Environ 56 min, 78 km.",
+  },
+  {
+    label: "À la sortie d'autoroute",
+    text: "Suivez la direction Hambach.",
+  },
+  {
+    label: "En entrant dans Hambach",
+    text: "Sur la rue nationale, passez l'église sur votre droite, puis continuez jusqu'à la rue Saint-Hubert.",
+  },
+  {
+    label: "Rue Saint-Hubert",
+    text: "Ne tournez pas à droite : continuez tout droit jusqu'au bout de la rue.",
+  },
+  {
+    label: "Sur place",
+    text: "Des panneaux seront posés pour indiquer la direction jusqu'au bout de la rue.",
+  },
+];
 
 const EVENTS = [
   {
@@ -164,6 +188,21 @@ export default function AnniversaireMariage() {
         >
           25
         </div>
+
+        <img
+          src={couplePhoto}
+          alt="Véronique et Eric"
+          className="fade-up"
+          style={{
+            width: "clamp(150px, 26vw, 230px)",
+            height: "auto",
+            marginTop: "clamp(-3.5rem, -7vw, -1.5rem)",
+            marginBottom: "0.5rem",
+            position: "relative",
+            zIndex: 2,
+            filter: "drop-shadow(0 18px 30px rgba(35, 38, 43, 0.25))",
+          }}
+        />
 
         <p
           className="serif fade-up"
@@ -319,23 +358,80 @@ export default function AnniversaireMariage() {
           <h2 className="serif" style={{ fontSize: "2rem", fontWeight: 500, margin: "0 0 0.5rem" }}>
             Étang de la famille Schwendiman
           </h2>
-          <p style={{ color: tokens.silverLight, margin: "0 0 2.5rem" }}>
-            Hambach {/* TODO: compléter l'adresse complète */}
+          <p style={{ color: tokens.silverLight, margin: "0 0 0.5rem" }}>
+            Hambach {/* TODO: compléter l'adresse complète si besoin */}
           </p>
-
-          {/* PLAN D'ACCÈS : remplacer ce bloc par une image du plan ou une carte intégrée */}
-          <div
+          <p
             style={{
-              border: `1px dashed ${tokens.silver}`,
-              borderRadius: "4px",
-              padding: "3rem 1.5rem",
-              fontSize: "0.85rem",
-              color: tokens.silverLight,
+              color: tokens.silver,
+              fontSize: "0.8rem",
               letterSpacing: "0.05em",
+              margin: "0 0 3rem",
             }}
           >
-            [ Plan d'accès à insérer ici ]
+            49°04'14.63"N&nbsp;&nbsp;7°02'01.41"E
+          </p>
+
+          <div
+            style={{
+              textAlign: "left",
+              maxWidth: "560px",
+              margin: "0 auto",
+              borderLeft: `1px solid ${tokens.silver}`,
+              paddingLeft: "1.75rem",
+            }}
+          >
+            {ACCESS_STEPS.map((step, i) => (
+              <div
+                key={step.label}
+                style={{
+                  position: "relative",
+                  paddingBottom: i === ACCESS_STEPS.length - 1 ? 0 : "1.9rem",
+                }}
+              >
+                <span
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: "-1.95rem",
+                    top: "0.15rem",
+                    width: 9,
+                    height: 9,
+                    borderRadius: "50%",
+                    background: tokens.ink,
+                    border: `1.5px solid ${tokens.gold}`,
+                  }}
+                />
+                <p
+                  className="eyebrow"
+                  style={{ color: tokens.gold, marginBottom: "0.3rem" }}
+                >
+                  {step.label}
+                </p>
+                <p
+                  style={{
+                    margin: 0,
+                    color: tokens.silverLight,
+                    fontSize: "0.95rem",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {step.text}
+                </p>
+              </div>
+            ))}
           </div>
+
+          <p
+            style={{
+              marginTop: "3rem",
+              fontSize: "0.85rem",
+              color: tokens.silver,
+            }}
+          >
+            Une question sur la route ? Appelez Eric au{" "}
+            <span style={{ color: tokens.ivory }}>06 74 36 56 16</span>.
+          </p>
         </div>
       </section>
 

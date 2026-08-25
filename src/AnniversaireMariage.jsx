@@ -172,57 +172,66 @@ export default function AnniversaireMariage() {
         </p>
 
         <div
-          className="serif fade-up"
-          style={{
-            fontSize: "clamp(6rem, 22vw, 13rem)",
-            lineHeight: 0.85,
-            fontWeight: 500,
-            fontStyle: "italic",
-            background: `linear-gradient(180deg, ${tokens.ink} 0%, ${tokens.silver} 60%, ${tokens.gold} 100%)`,
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          25
-        </div>
-
-        <img
-          src={couplePhoto}
-          alt="Véronique et Eric"
           className="fade-up"
           style={{
-            width: "clamp(150px, 26vw, 230px)",
-            height: "auto",
-            marginTop: "clamp(-3.5rem, -7vw, -1.5rem)",
-            marginBottom: "0.5rem",
-            position: "relative",
-            zIndex: 2,
-            filter: "drop-shadow(0 18px 30px rgba(35, 38, 43, 0.25))",
-          }}
-        />
-
-        <p
-          className="serif fade-up"
-          style={{
-            fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
-            marginTop: "0.5rem",
-            marginBottom: "2rem",
-            color: tokens.inkSoft,
-            fontStyle: "italic",
+            display: "flex",
+            flexWrap: "wrap-reverse",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "clamp(1rem, 4vw, 3rem)",
           }}
         >
-          ans de mariage
-        </p>
+          <div style={{ textAlign: "center" }}>
+            <div
+              className="serif"
+              style={{
+                fontSize: "clamp(5rem, 16vw, 9.5rem)",
+                lineHeight: 0.85,
+                fontWeight: 500,
+                fontStyle: "italic",
+                background: `linear-gradient(180deg, ${tokens.ink} 0%, ${tokens.silver} 60%, ${tokens.gold} 100%)`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                position: "relative",
+                zIndex: 1,
+              }}
+            >
+              25
+            </div>
+            <p
+              className="serif"
+              style={{
+                fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
+                marginTop: "0.25rem",
+                marginBottom: 0,
+                color: tokens.inkSoft,
+                fontStyle: "italic",
+              }}
+            >
+              ans de mariage
+            </p>
+          </div>
+
+          <img
+            src={couplePhoto}
+            alt="Véronique et Eric"
+            style={{
+              width: "clamp(160px, 22vw, 240px)",
+              height: "auto",
+              position: "relative",
+              zIndex: 2,
+              filter: "drop-shadow(0 18px 30px rgba(35, 38, 43, 0.25))",
+            }}
+          />
+        </div>
 
         <h1
           className="serif fade-up"
           style={{
             fontSize: "clamp(2rem, 5vw, 3.2rem)",
             fontWeight: 500,
-            margin: 0,
+            margin: "2rem 0 0",
             letterSpacing: "0.01em",
           }}
         >
